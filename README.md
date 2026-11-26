@@ -3,7 +3,7 @@
 Forecast Ho Chi Minh City `humidity` for the next 5 consecutive steps with an
 Encoder-Decoder (GRU) network + Attention. Metrics: R2, NSE, MAE, RMSE.
 
-**Final deliverable:** `notebooks/final_notebook.ipynb` (end-to-end, used for presenting).
+**Final deliverable:** `notebooks/final_notebook.ipynb`.
 
 ## Result (hourly data, test set, 5 hours pooled, Seq2Seq + Attention)
 R2 0.842 | NSE 0.838 | MAE 4.43 | RMSE 6.01 (persistence MAE 8.54, climatology 6.55, Ridge 4.45).
