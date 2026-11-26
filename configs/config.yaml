@@ -1,0 +1,24 @@
+# hcm-humidity-forecast configuration
+target: humidity          # pred_column
+horizon: 5                # forecast 5 consecutive future steps
+seed: 42
+split: {train: 0.70, val: 0.15, test: 0.15}   # chronological, no shuffling
+
+features:                 # columns shared by the hourly and daily files
+  numeric: [temp, feelslike, dew, humidity, precip, windgust, windspeed,
+            sealevelpressure, cloudcover, visibility, solarradiation, uvindex]
+  wind_direction: winddir  # encoded as sin/cos
+
+datasets:
+  daily:  {path: data/weather_hcm_daily.csv,  lookback: 30, freq_hours: 24}
+  hourly: {path: data/weather_hcm_hourly.csv, lookback: 48, freq_hours: 1}
+
+model:
+  units: 64
+  dropout: 0.2
+  learning_rate: 0.001
+  batch_size: 128
+  max_epochs: 25
+  patience: 4
+  teacher_forcing_prob: 0.5
+  clipnorm: 1.0

@@ -1,0 +1,10 @@
+tensorflow-cpu>=2.16
+numpy
+pandas
+scikit-learn
+matplotlib
+pyyaml
+nbformat
+nbconvert
+ipykernel
+pytest
